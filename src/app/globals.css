@@ -1,26 +1,97 @@
 @import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "mytheme";
+  default: true; /* set as default */
+  prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+  color-scheme: light; /* color of browser-provided UI */
+  --color-base-100: oklch(0% 0.0 0);      /* Dark background */
+  --color-background: var(--color-base-100);
+  --color-base-200: oklch(25% 0.03 270);      /* Slightly lighter */
+  --color-base-300: oklch(35% 0.04 270);      /* Card backgrounds */
+  --color-base-content: oklch(95% 0.01 270);  /* White/light text on dark */
+  --color-primary: oklch(45% 0.18 270);       /* Brand navy (#1A2A4F mapped) */
+  --color-primary-content: oklch(98% 0.01 270); /* Light text on primary */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --color-secondary: oklch(80% 0.18 100);     /* Soft mint green */
+  --color-secondary-content: oklch(20% 0.02 100); /* Dark text on mint */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-accent: oklch(80% 0.25 90);         /* Warm yellow (calls to action) */
+  --color-accent-content: oklch(20% 0.05 90); /* Dark text on yellow */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --color-neutral: oklch(95% 0.01 270);       /* Slightly lifted from base */
+  --color-neutral-content: oklch(95% 0.01 270);
+
+  --color-info: oklch(70% 0.15 240);          /* Calming blue for info badges */
+  --color-info-content: oklch(98% 0.01 240);
+
+  --color-success: oklch(65% 0.18 140);       /* Green */
+  --color-success-content: oklch(98% 0.01 140);
+
+  --color-warning: oklch(80% 0.2 80);         /* Gold/orange warning */
+  --color-warning-content: oklch(20% 0.05 80);
+
+  --color-error: oklch(60% 0.25 25);          /* Red-orange error */
+  --color-error-content: oklch(98% 0.01 25);
+
+  /* border radius */
+  --radius-selector: 1rem;
+  --radius-field: .rem;
+  --radius-box: 0.5rem;
+
+  /* base sizes */
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+
+  /* border size */
+  --border: 1.5px;
+
+  /* effects */
+  --depth: 1;
+
+}  
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--supersquad-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0F1A2F;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
 }
