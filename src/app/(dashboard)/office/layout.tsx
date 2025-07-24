@@ -1,14 +1,17 @@
 'use client';
 
+import { AvatarHeader } from '@/components/dashboard/AvatarHeader';
+import { BottomNavigation } from '@/components/dashboard/BottomNavigation';
+    
+import { MobileHeader } from '@/components/dashboard/MobileHeader';
+import { Sidebar } from '@/components/dashboard/Sidebar';
 import { useAIAgent } from '@/providers/AIAgentProvider';
 import React, { useState } from 'react';
-import { AvatarHeader } from './AvatarHeader';
-import { BottomNavigation } from './BottomNavigation';
-import { ChatInterface } from './ChatInterface';
-import { MobileHeader } from './MobileHeader';
-import { Sidebar } from './Sidebar';
 
-export const Dashboard: React.FC = () => {
+
+export default function OfficeLayout({ children }: { children: React.ReactNode }) {
+
+
   const { selectedAgent } = useAIAgent();
   const [showSettingsDrawer, setShowSettingsDrawer] = useState(false);
    
@@ -34,7 +37,7 @@ export const Dashboard: React.FC = () => {
         
         {/* Chat Area */}
         <div className="flex-1 flex flex-col relative">
-            <ChatInterface />
+            {children}
         </div>
       </div>
 

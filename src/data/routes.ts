@@ -17,6 +17,15 @@ export const routes = {
   FACEBOOK: "https://www.facebook.com/supersquad.ai/",
 };
 
+export const dashboardRoutes = {
+  HOME: "/office",
+  GENERATE_POST: "/office/generate-post",
+  PERSONALITY: "/office/personality",
+  PRODUCTS: "/office/products",
+  RESPONSE_STYLE: "/office/response-style",
+  PRIVACY: "/office/privacy",
+};
+
 export const header = {
   main: [
     { name: "Employees", href: routes.EMPLOYEES },

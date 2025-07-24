@@ -2,54 +2,59 @@
 @plugin "daisyui";
 @plugin "daisyui/theme" {
   name: "mytheme";
-  default: true; /* set as default */
-  prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
-  color-scheme: light; /* color of browser-provided UI */
-  --color-base-100: oklch(10% 0.0 10);      /* Dark background */
-  --color-background: var(--color-base-100);
-  --color-base-200: oklch(25% 0.03 270);      /* Slightly lighter */
-  --color-base-300: oklch(35% 0.04 270);      /* Card backgrounds */
-  --color-base-content: oklch(95% 0.01 270);  /* White/light text on dark */
-  --color-primary: oklch(45% 0.18 270);       /* Brand navy (#1A2A4F mapped) */
-  --color-primary-content: oklch(98% 0.01 270); /* Light text on primary */
+  default: true;
+  prefersdark: true;
+  color-scheme: light;
 
-  --color-secondary: oklch(80% 0.18 100);     /* Soft mint green */
-  --color-secondary-content: oklch(20% 0.02 100); /* Dark text on mint */
+  /* Base Colors - Dark UI First */
+  --color-base-100: oklch(19% 0.03 270); /* Main background */
+  --color-base-200: oklch(25% 0.03 270); /* Slightly lighter */
+  --color-base-300: oklch(35% 0.04 270); /* Card backgrounds */
+  --color-base-content: #F4F4F4; /* Light text on dark */
 
-  --color-accent: oklch(80% 0.25 90);         /* Warm yellow (calls to action) */
-  --color-accent-content: oklch(20% 0.05 90); /* Dark text on yellow */
+  /* Branding - Primary Colors */
+  --color-primary: #3A8DFF; /* Steel Blue - brand */
+  --color-primary-content: #F4F4F4; /* White text on blue */
 
-  --color-neutral: oklch(95% 0.01 270);       /* Slightly lifted from base */
-  --color-neutral-content: oklch(95% 0.01 270);
+  --color-secondary: #888F9C; /* Soft grey secondary */
+  --color-secondary-content: #F4F4F4;
 
-  --color-info: oklch(70% 0.15 240);          /* Calming blue for info badges */
-  --color-info-content: oklch(98% 0.01 240);
+  --color-accent: #00E0FF; /* Cyan - highlights, CTAs */
+  --color-accent-content: #0A0A0A; /* Dark text on light accent */
 
-  --color-success: oklch(65% 0.18 140);       /* Green */
-  --color-success-content: oklch(98% 0.01 140);
+  /* Neutral Grays */
+  --color-neutral: oklch(95% 0.01 270); /* Light neutral (for hover etc.) */
+  --color-neutral-content: #0A0A0A;
 
-  --color-warning: oklch(80% 0.2 80);         /* Gold/orange warning */
-  --color-warning-content: oklch(20% 0.05 80);
+  /* Status Colors */
+  --color-info: oklch(70% 0.15 240); /* Cool blue info */
+  --color-info-content: #F4F4F4;
 
-  --color-error: oklch(60% 0.25 25);          /* Red-orange error */
-  --color-error-content: oklch(98% 0.01 25);
+  --color-success: oklch(65% 0.18 140); /* Green success */
+  --color-success-content: #F4F4F4;
 
-  /* border radius */
+  --color-warning: oklch(80% 0.2 80); /* Orange gold warning */
+  --color-warning-content: #0A0A0A;
+
+  --color-error: oklch(60% 0.25 25); /* Red-orange error */
+  --color-error-content: #F4F4F4;
+
+  /* Border Radius */
   --radius-selector: 1rem;
-  --radius-field: .rem;
+  --radius-field: 0.5rem;
   --radius-box: 0.5rem;
 
-  /* base sizes */
+  /* Spacing */
   --size-selector: 0.25rem;
   --size-field: 0.25rem;
 
-  /* border size */
+  /* Border */
   --border: 1.5px;
 
-  /* effects */
+  /* Shadows / Depth */
   --depth: 1;
+}
 
-}  
 
 body {
   background: var(--background);
@@ -74,12 +79,16 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #0F1A2F;
 }
+ 
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
+button {
+  cursor: pointer;
+}
 /* Custom animations */
 @keyframes fadeInUp {
   from {

@@ -17,7 +17,7 @@ export const MobileHeader: React.FC = () => {
               className="w-10 h-10 rounded-full flex items-center justify-center text-lg"
               style={{
                 backgroundColor: selectedAgent?.primaryColor || 'var(--color-primary)',
-                color: selectedAgent?.accentColor || 'var(--color-primary-content)'
+                color: selectedAgent?.primaryColor || 'var(--color-primary-content)'
               }}
             >
               <Image src={selectedAgent?.avatar || '/bot.webp'} alt={selectedAgent?.name || ''} width={24} height={24} className='rounded-full' />
@@ -71,7 +71,7 @@ export const MobileHeader: React.FC = () => {
                 className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mx-auto mb-3"
                 style={{
                   backgroundColor: selectedAgent?.primaryColor || 'var(--color-primary)',
-                  color: selectedAgent?.accentColor || 'var(--color-primary-content)'
+                  color: selectedAgent?.primaryColor || 'var(--color-primary-content)'
                 }}
               >
                 {selectedAgent?.avatar}

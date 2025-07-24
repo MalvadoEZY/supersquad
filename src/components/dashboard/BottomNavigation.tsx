@@ -80,7 +80,7 @@ export const BottomNavigation: React.FC = () => {
               className="w-6 h-6 rounded-full flex items-center justify-center text-sm font-semibold shadow-sm"
               style={{
                 backgroundColor: selectedAgent?.primaryColor || 'var(--color-primary)',
-                color: selectedAgent?.accentColor || 'var(--color-primary-content)'
+                color: selectedAgent?.primaryColor || 'var(--color-primary-content)'
               }}
             >
               <Image src={selectedAgent?.avatar || ''} alt={selectedAgent?.name || ''} width={34} height={34} />
@@ -107,7 +107,7 @@ export const BottomNavigation: React.FC = () => {
                       className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold shadow-sm"
                       style={{
                         backgroundColor: agent.primaryColor,
-                        color: agent.accentColor
+                        color: agent.primaryColor
                       }}
                     >
                       <Image src={agent.avatar || '/bot.webp'} alt={agent.name} width={24} height={24} className='rounded-full' />

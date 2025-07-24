@@ -1,5 +1,6 @@
 'use client';
 
+import Logo from '@/components/Logo';
 import Divider from '@/components/ui/divider';
 import { ArrowLeft, ArrowRight, Eye, EyeOff, Lock, Mail, User } from 'lucide-react';
 import Link from 'next/link';
@@ -63,10 +64,8 @@ export default function SignUp() {
             </Link>
             
             <Link href="/" className="flex items-center gap-2">
-              <div className="relative inline-block">
-                <span className="text-3xl font-bold font-inter">supersquad</span>
-                <div className="absolute -top-1 left-8 w-2 h-2 bg-accent rounded-full"></div>
-              </div>
+              <Logo />
+
             </Link>
             
             <div className="w-24"></div> {/* Spacer for centering */}

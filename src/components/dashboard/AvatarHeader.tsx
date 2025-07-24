@@ -2,57 +2,23 @@
 
 import { useAIAgent } from '@/providers/AIAgentProvider';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React from 'react';
+import Logo from '../Logo';
 
 export const AvatarHeader: React.FC = () => {
   const { agents, selectedAgent, setSelectedAgent } = useAIAgent();
-  const [selectedBusiness, setSelectedBusiness] = useState('Acme Corp');
-
-  const businesses = [
-    'Acme Corp',
-    'TechStart Inc',
-    'Global Solutions',
-    'Innovation Labs',
-    'Digital Dynamics'
-  ];
+ 
 
   const userInitials = 'JD'; // This could come from user context
 
   return (
     <div className="hidden md:flex navbar bg-base-200 border-b border-base-300 px-4">
       {/* Left Side - Business Dropdown */}
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost btn-sm gap-2">
-            <span className="text-sm font-medium">{selectedBusiness}</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-          <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-            {businesses.map((business) => (
-              <li key={business}>
-                <button
-                  onClick={() => setSelectedBusiness(business)}
-                  className={`text-left ${selectedBusiness === business ? 'bg-primary text-primary-content' : ''}`}
-                >
-                  {business}
-                </button>
-              </li>
-            ))}
-            <li className="divider"></li>
-            <li>
-              <button className="text-left text-sm">
-                + Add New Business
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-
+       
+      <div className='navbar-start'><Logo/></div>
       {/* Center - AI Agent Avatars */}
       <div className="navbar-center">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-6">
           {agents.map((agent) => (
             <button
               key={agent.id}
@@ -64,7 +30,7 @@ export const AvatarHeader: React.FC = () => {
               }`}
               style={{
                 backgroundColor: selectedAgent?.id === agent.id ? agent.primaryColor : 'var(--color-base-300)',
-                color: selectedAgent?.id === agent.id ? agent.accentColor : 'var(--color-base-content)'
+                color: selectedAgent?.id === agent.id ? agent.primaryColor : 'var(--color-base-content)'
               }}
               title={agent.name}
             >
@@ -80,7 +46,7 @@ export const AvatarHeader: React.FC = () => {
           <div 
             tabIndex={0} 
             role="button" 
-            className="btn btn-circle btn-sm bg-primary text-primary-content hover:bg-primary/80"
+            className="btn btn-circle btn-lg bg-primary text-primary-content hover:bg-primary/80"
           >
             <span className="text-sm font-medium">{userInitials}</span>
           </div>

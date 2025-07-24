@@ -1,5 +1,6 @@
 'use client';
 
+import Logo from '@/components/Logo';
 import Divider from '@/components/ui/divider';
 import { ArrowLeft, ArrowRight, Eye, EyeOff, Lock, Mail } from 'lucide-react';
 import Link from 'next/link';
@@ -33,10 +34,8 @@ export default function SignIn() {
             </Link>
             
             <Link href="/" className="flex items-center gap-2">
-              <div className="relative inline-block">
-                <span className="text-3xl font-bold font-inter">supersquad</span>
-                <div className="absolute -top-1 left-8 w-2 h-2 bg-accent rounded-full"></div>
-              </div>
+              <Logo />
+
             </Link>
             
             <div className="w-24"></div> {/* Spacer for centering */}
@@ -108,13 +107,14 @@ export default function SignIn() {
               </div>
 
               {/* Signin button */}
-              <button
+              <Link
+              href={"/office"}
                 type="submit"
                 className="w-full btn btn-accent btn-lg gap-2 group shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 Sign in
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </Link>
             </form>
 
             {/* Divider */}

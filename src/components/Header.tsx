@@ -4,6 +4,7 @@ import { header } from '@/data/routes';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import Logo from './Logo';
 
 // header structure
  
@@ -23,10 +24,10 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo and header */}
           <div className="flex items-center space-x-12">
-            <div className="relative">
-              <span className="text-2xl font-bold font-inter">supersquad</span>
-              <div className="absolute -top-1 left-4 w-2 h-2 bg-accent rounded-full"></div>
-            </div>
+            <Link href="/" className="relative flex items-center gap-3">
+              <Logo />
+
+            </Link>
 
             {/* Desktop header */}
             <nav className="hidden md:flex items-center space-x-8 ml-10">

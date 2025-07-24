@@ -1,6 +1,5 @@
-import { Dashboard } from '@/components/dashboard/Dashboard';
+import { ChatInterface } from '@/components/dashboard/ChatInterface';
 
 export default function OfficePage() {
-  return <Dashboard />
-
+  return <ChatInterface />
 }
