@@ -243,7 +243,7 @@ export default function GeneratePostPage() {
   // Loading Screen
   if (showLoading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center p-4">
+      <div className="min-h-screen max-xl:py-20 bg-background flex items-center justify-center p-4">
         <div className="max-w-4xl mx-auto text-center" ref={loadingRef}>
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-primary mb-4">
@@ -338,7 +338,7 @@ export default function GeneratePostPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background p-4">
+    <div className="min-h-screen max-xl:py-20 bg-background p-4">
       <div className="max-w-4xl mx-auto" ref={formRef}>
         {/* Header */}
         <div className="text-center mb-8">

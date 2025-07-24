@@ -70,7 +70,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div ref={heroRef} className="hero min-h-screen bg-gradient-to-b from-base-100 via-primary/5 to-accent/5 text-white relative overflow-hidden">
+    <div ref={heroRef} className="hero max-xl:pt-32 min-h-screen bg-gradient-to-b from-base-100 via-primary/5 to-accent/5 text-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-accent/5"></div>
       <div className="absolute top-20 right-20 w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
