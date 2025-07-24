@@ -85,7 +85,7 @@ export default function How2({ tl }: { tl: GSAPTimeline }) {
             cancelAnimationFrame(animationFrameId);
             scrollTrigger?.kill();
         }; 
-    }, [tl]);
+    }, [tl, formData]);
 
     return (
         <div ref={containerRef} className="bg-base-200/30 border border-primary rounded-xl p-6 hover:bg-base-200/40 transition-all duration-300">

@@ -5,7 +5,7 @@
   default: true; /* set as default */
   prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
   color-scheme: light; /* color of browser-provided UI */
-  --color-base-100: oklch(0% 0.0 0);      /* Dark background */
+  --color-base-100: oklch(10% 0.0 10);      /* Dark background */
   --color-background: var(--color-base-100);
   --color-base-200: oklch(25% 0.03 270);      /* Slightly lighter */
   --color-base-300: oklch(35% 0.04 270);      /* Card backgrounds */
@@ -94,4 +94,14 @@ html {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hide scrollbar for mobile */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
 }

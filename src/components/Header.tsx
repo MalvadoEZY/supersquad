@@ -1,22 +1,12 @@
 'use client';
 
-import { routes } from '@/data/routes';
+import { header } from '@/data/routes';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
-// Navigation structure
-const navigation = {
-  main: [
-    { name: 'Employees', href: routes.EMPLOYEES },
-    { name: 'Pricing', href: routes.PRICING },
-  ],
-  cta: [
-    { name: 'Log in', href: routes.SIGNIN, accent: false },
-    { name: 'Deploy your AI', href: routes.SIGNUP, accent: true },
-  ],
-};
-
+// header structure
+ 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -31,16 +21,16 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-base-100/95 backdrop-blur-xl border-b border-gray-200/30">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between h-20">
-          {/* Logo and Navigation */}
+          {/* Logo and header */}
           <div className="flex items-center space-x-12">
             <div className="relative">
               <span className="text-2xl font-bold font-inter">supersquad</span>
               <div className="absolute -top-1 left-4 w-2 h-2 bg-accent rounded-full"></div>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop header */}
             <nav className="hidden md:flex items-center space-x-8 ml-10">
-              {navigation.main.map((item) => (
+              {header.main.map((item) => (
                 <Link 
                   key={item.name}
                   href={item.href} 
@@ -55,16 +45,16 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-6">
             <Link 
-              href={navigation.cta[0].href} 
+              href={header.cta[0].href} 
               className="btn btn-ghost  btn-lg gap-2 "
             >
-              {navigation.cta[0].name}
+              {header.cta[0].name}
             </Link>
             <Link 
-              href={navigation.cta[1].href}
+              href={header.cta[1].href}
               className="btn btn-accent btn-lg gap-2 "
             >
-              {navigation.cta[1].name}
+              {header.cta[1].name}
             </Link>
           </div>
 
@@ -77,7 +67,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation - Full Screen Drawer */}
+        {/* Mobile header - Full Screen Drawer */}
         {isMenuOpen && (
           <div className="md:hidden fixed inset-0 z-50 bg-white">
             <div className="flex flex-col h-full">
@@ -95,11 +85,11 @@ export default function Header() {
                 </button>
               </div>
 
-              {/* Navigation Content */}
+              {/* header Content */}
               <div className="flex-1 p-10 text-center space-y-10 bg-white ">
-                {/* Main Navigation */}
+                {/* Main header */}
                 <div className="space-y-10">
-                  {navigation.main.map((item) => (
+                  {header.main.map((item) => (
                     <Link 
                       key={item.name}
                       href={item.href} 
@@ -118,18 +108,18 @@ export default function Header() {
               {/* Bottom CTA */}
               <div className="p-6 flex flex-col gap-4 border-t border-gray-200 bg-white">
                 <Link 
-                  href={navigation.cta[0].href} 
+                  href={header.cta[0].href} 
                   onClick={closeAllDropdowns}
                   className="block w-full text-accent hover:text-white py-4 border-primary border rounded hover:bg-primary/90 transition-all duration-200 font-inter font-semibold text-lg shadow-lg text-center"
                 >
-                  {navigation.cta[0].name}
+                  {header.cta[0].name}
                 </Link>
                 <Link 
-                  href={navigation.cta[1].href}
+                  href={header.cta[1].href}
                   onClick={closeAllDropdowns}
                   className="block w-full bg-accent text-white py-4 rounded hover:bg-accent/90 transition-all duration-200 font-inter font-semibold text-lg shadow-lg text-center"
                 >
-                  {navigation.cta[1].name}
+                  {header.cta[1].name}
                 </Link>
               </div>
             </div>

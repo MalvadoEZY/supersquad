@@ -100,7 +100,7 @@ export default function How1({ tl }: { tl: GSAPTimeline }) {
                 gsap.killTweensOf(buttonRef.current);
             }
         }; 
-    }, [tl]);
+    }, [tl, formData, isButtonActive]);
 
     return (
         <div ref={cardRef} className="bg-base-200/30 border border-primary  rounded-xl p-6 hover:bg-base-200/40 transition-all duration-300">

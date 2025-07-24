@@ -17,6 +17,18 @@ export const routes = {
   FACEBOOK: "https://www.facebook.com/supersquad.ai/",
 };
 
+export const header = {
+  main: [
+    { name: "Employees", href: routes.EMPLOYEES },
+    { name: "Features", href: routes.FEATURES },
+    { name: "Pricing", href: routes.PRICING },
+  ],
+  cta: [
+    { name: "Log in", href: routes.SIGNIN, accent: false },
+    { name: "Deploy your AI", href: routes.SIGNUP, accent: true },
+  ],
+};
+
 export const footer = [
   {
     label: "Company",

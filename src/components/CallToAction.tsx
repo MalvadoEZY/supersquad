@@ -28,10 +28,7 @@ export default function CallToAction() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-      {/* Gradient overlay for extra depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-purple-900/30"></div>
-      
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-accent/1 via-accent/5 to-accent/20 relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div ref={contentRef} className="text-center max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
